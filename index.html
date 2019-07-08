@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Martin Roy ~ Web Developer</title>
+			<link href="https://fonts.googleapis.com/css?family=Orbitron:400,700&display=swap" rel="stylesheet">
+			<link href="./assets/css/style.css" type="text/css" rel="stylesheet"/>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+			<script src="https://kit.fontawesome.com/ae0b217be4.js"></script>
+			<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+			<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+			<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+			<script src="./assets/js/script.js" type="text/jsx"></script>
+		</head>
+		<body>
+			<header>
+				<div id="coords">
+					<i class="fas fa-barcode"></i>
+					<h1>MARTIN ROY</h1>
+					<ul>
+						<li><a href="mailto:marty@martyroy.com">marty@martyroy.com</a></li>
+						<li>255 16th ave.</li>
+						<li>Saint Zotique, QC J0P 1Z0</li>
+						<li><a href="tel:5146996398">(514) 699-6398</a></li>
+					</ul>
+				</div>
+				<nav id="navigation">
+				</nav>
+			</header>
+			<div id="cvContent"></div>
+			<footer>
+				<p><span>Powered by </span><img src="./assets/images/logo.png" alt="The Answer"/></p>
+			</footer>
+			<script type="text/javascript">
+				jQuery(document).ready(function(){
+					jQuery.getJSON('./assets/data/Skills.json', function(data){	
+					jQuery('#cvContent').html('<div id="cvItem">'+data.title+'<div class="item">'+data.items[0].content+'</div></div>');	
+					});
+				});
+			</script>
+		</body>
+	</html>
